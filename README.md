@@ -16,8 +16,12 @@
     + [1.6 Other Useful Normal Mode Remappings](#1.6-other-useful-normal-mode-remappings)
     + [1.7 Register related settings](#1.7-register-related-settings)
   - [2 Window Management](#2-window-management)
+    + [2.1 Creating Window Through Split Screen](#2.1-creating-window-through-split-screen)
+    + [2.2 Moving the Cursor Between Different Windows](#2.2-moving-the-cursor-between-different-windows)
 
-### Dependencies
+-----
+
+## Dependencies
 * [**Neovim**](https://neovim.io/) >= 0.10 (nightly)
 * [git](https://git-scm.com/)
 * [node.js](https://nodejs.org/)
@@ -29,13 +33,13 @@
 * Optional:
   - [Nerd Font](https://www.nerdfonts.com/)
 
-### Installation
+## Installation
 1. Install all the above dependencies
 2. Run `git clone https://github.com/gczcn/nvim.git ~/.config/nvim` to clone the repository
 3. Run `npm install -g neovim` in terminal
 4. Run `nvim`
 
-### Basic Settings
+## Basic Settings
 |Opt|Value|Action|
 |---|------|-----|
 |`fileencoding`|`'UTF-8'`|file content encoding for the buffer|
@@ -83,8 +87,12 @@
 |`undofile`|`true`|Save undo history|
 |`winminwidth`|`5`|Minimum window width|
 |`fillchars`|`{foldopen='-',foldclose='>',}`|set fillchars|
-### Keyboard Shortcuts
+
+## Keyboard Shortcuts
 **Note**: Some settings here refer to this repository: [<u>repository</u>](https://github.com/theniceboy/nvim/)
+
+leader key settings:
+`vim.g.mapleader = ' '`
 
 #### 1 Basic Editor Features
 
@@ -148,3 +156,23 @@
 |`<M-v>`|Paste to system clipboard (mode = i)|`:normal"+gp<CR><right>`|
 
 #### 2 Window Management
+##### 2.1 Creating Window Through Split Screen
+|Shortcut|Action|
+|--------|------|
+|`<leader>su`|Create a new horizontal split screen and place it above the current window|
+|`<leader>se`|Create a new horizontal split screen and place it below the current window|
+|`<leader>sn`|Create a new vertical split screen and place it left to the current window|
+|`<leader>si`|Create a new vertical split screen and place it right to the current window|
+|`<leader>sv`|Set the two splits to be vertical|
+|`<leader>sh`|Set the two splits to be horizontal|
+|`<leader>srv`|Rotate splits and arrange splits vertically|
+|`<leader>srh`|Rotate splits and arrange splits horizontally|
+
+##### 2.2 Moving the Cursor Between Different Windows
+|Shortcut|Action|
+|--------|------|
+|`<leader>ww`|Move cursor to the next window|
+|`<leader>wn`|Move cursor one window left|
+|`<leader>wi`|Move cursor one window right|
+|`<leader>wu`|Move cursor one window up|
+|`<leader>we`|Move cursor one window down|
