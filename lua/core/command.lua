@@ -1,0 +1,5 @@
+vim.cmd('command! Wqa :wqa')
+vim.cmd('command! WQa :wqa')
+vim.cmd('command! WQA :wqa')
+vim.cmd('command! Q :q')
+vim.cmd('command! Q1 :q!')
