@@ -1,4 +1,4 @@
-# Neovim configuration for [Colemak](https://colemak) users
+# Neovim configuration for [Colemak](https://colemak.com) users
 
 [chinese README](./README.zh_CN.md)
 
