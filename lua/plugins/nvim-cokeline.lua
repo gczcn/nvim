@@ -14,13 +14,13 @@ return {
 			command = "redrawtabline",
 		})
 
-		map("n", "<S-Tab>", "<Plug>(cokeline-focus-prev)", { silent = true })
-		map("n", "<Tab>", "<Plug>(cokeline-focus-next)", { silent = true })
-		map("n", "<Leader>n", "<Plug>(cokeline-switch-prev)", { silent = true })
-		map("n", "<Leader>i", "<Plug>(cokeline-switch-next)", { silent = true })
+		vim.keymap.set("n", "<S-Tab>", "<Plug>(cokeline-focus-prev)", { silent = true })
+		vim.keymap.set("n", "<Tab>", "<Plug>(cokeline-focus-next)", { silent = true })
+		vim.keymap.set("n", "<Leader>n", "<Plug>(cokeline-switch-prev)", { silent = true })
+		vim.keymap.set("n", "<Leader>i", "<Plug>(cokeline-switch-next)", { silent = true })
 		for i = 1, 9 do
-			map("n", ("<leader>%s"):format(i), ("<Plug>(cokeline-focus-%s)"):format(i), { silent = true })
-			map("n", ("<leader>d%s"):format(i), ("<Plug>(cokeline-switch-%s)"):format(i), { silent = true })
+			vim.keymap.set("n", ("<leader>%s"):format(i), ("<Plug>(cokeline-focus-%s)"):format(i), { silent = true })
+			vim.keymap.set("n", ("<leader>d%s"):format(i), ("<Plug>(cokeline-switch-%s)"):format(i), { silent = true })
 		end
 		local is_picking_focus = require("cokeline/mappings").is_picking_focus
 		local is_picking_close = require("cokeline/mappings").is_picking_close
@@ -218,6 +218,9 @@ return {
 					  if vim.fn.expand('%') == '' or vim.fn.expand('%') == nil then
 					    return ' ' .. vim.o.filetype .. ' '
             else
+              if os.getenv('HOME') == string.sub(vim.fn.expand('%'), 1, string.len(os.getenv('HOME'))) then
+                return '~' .. string.sub(vim.fn.expand('%'), (string.len(vim.fn.expand('%')) - string.len(os.getenv('HOME'))) * -1 ) .. ' '
+              end
               return " " .. vim.fn.expand("%") .. " "
             end
 						-- return " " .. vim.fn.expand("%") .. " "
