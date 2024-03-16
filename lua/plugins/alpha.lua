@@ -58,7 +58,7 @@ return {
 
     -- Disable folding on alpha buffer
     vim.cmd('autocmd FileType alpha setlocal nofoldenable')
-    map('n', '<leader>a', '<cmd>Alpha<CR>')
+    vim.keymap.set('n', '<leader>a', '<cmd>Alpha<CR>')
     if vim.o.filetype == 'lazy' then
       vim.cmd [[q]]
     end
