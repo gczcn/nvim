@@ -6,3 +6,10 @@ autocmd('FileType', {
     vim.cmd('setlocal formatoptions-=c formatoptions-=r formatoptions-=o')
   end
 })
+
+autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  callback = function ()
+    vim.highlight.on_yank()
+  end
+})
