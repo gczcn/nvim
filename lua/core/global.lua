@@ -1,5 +1,5 @@
 -- o = vim.o
 -- g = vim.g
 -- v = vim
-map = vim.keymap.set
+-- vim.keymap.set = vim.keymap.set
 fileopened = { 'BufReadPost', 'BufWritePost', 'BufNewFile' }
