@@ -21,7 +21,11 @@ return {
     end
 
     local date = function ()
-      return os.date('date: %a %b %e %R:%S %Z UTC%z %Y')
+      if string.sub(os.getenv('LANG'), 1, 2) == 'zh' then
+        return os.date('date: %Y年%b月%d日 星期%a %T %Z')
+      else
+        return os.date('date: %a %b %e %R:%S %Z UTC%z %Y')
+      end
     end
 
     startify.section.header.val = {
@@ -41,7 +45,8 @@ return {
       startify.button('S', '󰅳  grep string', '<cmd>Telescope grep_string<CR>'),
       startify.button('r', '  Recent files', '<cmd>Telescope oldfiles<CR>'),
       startify.button('s', '  Restore Session', '<cmd>lua require("persistence").load()<CR>'),
-      startify.button('v', '  file explorer', '<cmd>Neotree toggle<CR>'),
+      startify.button('v', '  Neotree file explorer', '<cmd>Neotree toggle<CR>'),
+      startify.button('i', '  Oil file explorer', '<cmd>Oil<CR>'),
       startify.button('k', '󰌌  Keymaps', '<cmd>Telescope keymaps<CR>'),
       startify.button('c', '  Colorscheme', '<cmd>Telescope colorscheme<CR>'),
       startify.button('t', '  Terminal', '<cmd>ToggleTerm<CR>'),
@@ -51,6 +56,7 @@ return {
       startify.button('o', '  Options', '<cmd>Neotree ~/.config/nvim<CR>'),
       startify.button('p', '󰼭  Speedtyper', '<cmd>Speedtyper<CR>'),
       startify.button('x', '󰍜  More', '<cmd>MoreMenu<CR>'),
+      startify.button('h', '󰮥  Help', ':h '),
     }
 
     -- Send config to alpha

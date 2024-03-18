@@ -1,5 +1,6 @@
 vim.g.mapleader      = ' '
 vim.g.maplocalleader = '\\'
+vim.o.timeout        = true
 vim.o.timeoutlen     = 300
 
 local nvo            = { 'n', 'v', 'o' }
@@ -95,16 +96,16 @@ local nmappings      = {
   { from = '<M-o>',       to = '0',                                                              mode = nvo },
 
   -- Pairs
-  { from = '<M-BS>',      to = '<BS><Del>',                                                      mode = i },
-  { from = '<M-[>',       to = '[]<left>',                                                       mode = i },
-  { from = '<M-{>',       to = '{}<left>',                                                       mode = i },
-  { from = '<M-(>',       to = '()<left>',                                                       mode = i },
-  { from = '<M-<>',       to = '<><left>',                                                       mode = i },
-  { from = "<M-'>",       to = "''<left>",                                                       mode = i },
-  { from = '<M-`>',       to = '``<left>',                                                       mode = i },
-  { from = '<M-">',       to = '""<left>',                                                       mode = i },
-  { from = '<M-#>',       to = '##<left>',                                                       mode = i },
-  { from = '<M-t>',       to = '<CR><ESC>O',                                                     mode = i },
+  { from = '<M-BS>',      to = '<BS><Del>',                                                      mode = ic },
+  { from = '<M-[>',       to = '[]<left>',                                                       mode = ic },
+  { from = '<M-{>',       to = '{}<left>',                                                       mode = ic },
+  { from = '<M-(>',       to = '()<left>',                                                       mode = ic },
+  { from = '<M-<>',       to = '<><left>',                                                       mode = ic },
+  { from = "<M-'>",       to = "''<left>",                                                       mode = ic },
+  { from = '<M-`>',       to = '``<left>',                                                       mode = ic },
+  { from = '<M-">',       to = '""<left>',                                                       mode = ic },
+  { from = '<M-#>',       to = '##<left>',                                                       mode = ic },
+  { from = '<M-t>',       to = '<CR><ESC>O',                                                     mode = ic },
 
   -- Other
   {

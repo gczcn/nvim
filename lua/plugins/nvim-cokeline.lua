@@ -148,66 +148,110 @@ return {
 			end
 		end
 
+		local sidebar_bg_1 = function ()
+      if vim.o.filetype == 'neo-tree' or vim.o.filetype == 'Trouble' or vim.o.filetype == 'Outline' then
+        return default_text()
+      end
+      return dark2_normal
+    end
+
+    local sidebar_bg_2 = function ()
+      if vim.o.filetype == 'neo-tree' or vim.o.filetype == 'Trouble' or vim.o.filetype == 'Outline' then
+        return default_text2()
+      end
+      return dark2_normal
+    end
+
+    local sidebar_fg = function ()
+      if vim.o.filetype == 'neo-tree' or vim.o.filetype == 'Trouble' or vim.o.filetype == 'Outline' then
+        return dark
+      end
+      return text_normal
+    end
+
 		require("cokeline").setup({
 			sidebar = {
-				filetype = { "neo-tree", "Trouble" },
+				filetype = { "neo-tree", "Trouble", "Outline" },
 				components = {
 					{
+            -- text = function()
+            -- 	if vim.o.filetype == "neo-tree" then
+            -- 		return " "
+            -- 	end
+            -- 	return ""
+            -- end,
 						text = " ",
-						-- text = function()
-						-- 	if vim.o.filetype == "neo-tree" then
-						-- 		return " "
-						-- 	end
-						-- 	return ""
-						-- end,
-						fg = dark,
-						bg = function()
-							return default_text()
+						fg = function ()
+              return sidebar_fg()
 						end,
-						bold = true,
+						bg = function()
+              return sidebar_bg_2()
+						end,
 						on_click = function()
 							vim.cmd("Neotree toggle")
 						end,
 					},
 					{
 						text = " 󰈔",
-						fg = dark,
-						bg = function()
-							return default_text()
+						fg = function ()
+              return sidebar_fg()
 						end,
-						bold = true,
+						bg = function()
+              return sidebar_bg_2()
+						end,
 						on_click = function()
 							require("neo-tree.command").execute({ source = "buffers", toggle = true })
 						end,
 					},
 					{
 						text = " ",
-						fg = dark,
-						bg = function()
-							return default_text()
+						fg = function ()
+              return sidebar_fg()
 						end,
-						bold = true,
+						bg = function()
+              return sidebar_bg_2()
+						end,
 						on_click = function()
 							require("neo-tree.command").execute({ source = "git_status", toggle = true })
 						end,
 					},
 					{
 						text = " ",
-						fg = dark,
-						bold = true,
+						fg = function ()
+              return sidebar_fg()
+						end,
 						bg = function()
-							return default_text()
+              return sidebar_bg_2()
 						end,
 						on_click = function()
 							vim.cmd("TroubleToggle")
 						end,
 					},
 					{
-						text = " Sidebar",
-						fg = dark,
-						bold = true,
+						text = " 󰅌 ",
+						fg = function ()
+              return sidebar_fg()
+						end,
 						bg = function()
-							return default_text()
+              return sidebar_bg_2()
+						end,
+						on_click = function()
+							vim.cmd("Outline")
+						end,
+					},
+					{
+						text = " Sidebar",
+						fg = function ()
+              return sidebar_fg()
+						end,
+						bold = function ()
+              if vim.o.filetype == 'neo-tree' or vim.o.filetype == 'Trouble' or vim.o.filetype == 'Outline' then
+                return true
+              end
+              return false
+						end,
+						bg = function()
+              return sidebar_bg_1()
 						end,
 					},
 				},
@@ -264,11 +308,14 @@ return {
 					end,
 				},
 				{
-					text = "  ",
-					-- text = '  ',
+					-- text = "  ",
+					text = '  ',
 					fg = dark,
 					bg = function()
-						return default_text()
+					  if vim.o.filetype ~= 'neo-tree' and vim.o.filetype ~= 'Trouble' and vim.o.filetype ~= 'Outline' then
+              return default_text()
+            end
+            return default_text2()
 					end,
 					on_click = function()
 						vim.cmd([[help]])
@@ -354,7 +401,7 @@ return {
 				},
 				{
 					text = function(buffer)
-						return buffer.is_modified and "● " or "X "
+						return buffer.is_modified and "● " or "x "
 					end,
 					fg = function(buffer)
 						return dia_fg(buffer)

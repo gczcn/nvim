@@ -1,10 +1,10 @@
 return {
   {
     'WhoIsSethDaniel/mason-tool-installer.nvim',
-    dependencies =  {
+    dependencies = {
       'williamboman/mason.nvim',
     },
-    config = function ()
+    config = function()
       local mason = require('mason')
       local mason_tool_installer = require('mason-tool-installer')
 
@@ -20,37 +20,37 @@ return {
           'eslint_d', -- js linter
         },
       })
-    end
+    end,
   },
   {
-    "stevearc/conform.nvim",
-    event = { "BufWritePre" },
-    cmd = { "ConformInfo" },
+    'stevearc/conform.nvim',
+    event = { 'BufWritePre' },
+    cmd = { 'ConformInfo' },
     keys = {
       {
         -- Customize or remove this keymap to your liking
-        "<leader>f",
+        '<leader>f',
         function()
-          require("conform").format({ async = true, lsp_fallback = true })
+          require('conform').format({ async = true, lsp_fallback = true })
         end,
-        mode = "",
-        desc = "Format buffer",
+        mode = '',
+        desc = 'Format buffer',
       },
     },
     -- Everything in opts will be passed to setup()
     opts = {
       -- Define your formatters
       formatters_by_ft = {
-        -- lua = { "stylua" },
-        python = { "isort", "black" },
-        javascript = { { "prettierd", "prettier" } },
+        lua = { 'stylua' },
+        python = { 'isort', 'black' },
+        javascript = { { 'prettierd', 'prettier' } },
       },
       -- Set up format-on-save
       -- format_on_save = { timeout_ms = 500, lsp_fallback = true },
       -- Customize formatters
       formatters = {
         shfmt = {
-          prepend_args = { "-i", "2" },
+          prepend_args = { '-i', '2' },
         },
       },
     },

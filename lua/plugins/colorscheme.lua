@@ -17,6 +17,12 @@ return {
         },
       })
       vim.cmd('colorscheme gruvbox')
+
+      -- noice
+      vim.api.nvim_set_hl(0, 'NoiceCmdlinePopupBorder', { bg = '#282828' })
+      vim.api.nvim_set_hl(0, 'NoiceCmdlinePopupTitle', { bg = '#282828' })
+      vim.api.nvim_set_hl(0, 'NoiceCmdlineIcon', { bg = '#282828', fg = '#fabd2f' })
+      vim.api.nvim_set_hl(0, 'NoiceCmdlineIconSearch', { bg = '#282828', fg = '#fabd2f' })
     end
   },
 }

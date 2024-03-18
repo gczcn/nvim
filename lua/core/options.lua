@@ -10,7 +10,7 @@ opt.completeopt = { "menu", "menuone", "noselect" } -- Options for insert mode c
 opt.signcolumn = "yes"                              -- always show the sign column
 opt.cursorline = true                               -- highlight the text line of the cursor
 opt.cursorcolumn = true                             -- highlight the text column of the cursor
-opt.scrolloff = 5                                   -- Lines of context
+opt.scrolloff = 8                                   -- Lines of context
 opt.sidescrolloff = 8                               -- Columns of context
 opt.wrap = false                                    -- Disable line wrap
 opt.tabstop = 2                                     -- Number of spaces tabs count for
@@ -39,18 +39,13 @@ opt.foldlevelstart = 99                             -- start with all code unfol
 opt.foldcolumn = "1"                                -- show foldcolumn
 opt.conceallevel = 2                                -- Hide * markup for bold and italic, but not markers with substitutions
 opt.confirm = true                                  -- Confirm to save changes before exiting modified buffer
-opt.colorcolumn = "100"                              -- Line number reminder
+opt.colorcolumn = "100"                             -- Line number reminder
 opt.copyindent = true                               -- copy the previous indentation on autoindenting
 opt.expandtab = true                                -- enable the use of space in tab
 opt.history = 300
 opt.linebreak = true                                -- wrap lines at 'breakat'
 opt.undofile = true
 opt.winminwidth = 5                                 -- Minimum window width
-opt.fillchars = {
-  foldopen = "-",
-  foldclose = ">",
-}
-
-if vim.fn.has("nvim-0.10") == 1 then
-  opt.smoothscroll = true
-end
+opt.smoothscroll = true
+opt.pumblend = 25                                   -- Set popup menu transparency
+opt.fillchars = { foldopen = "-", foldclose = ">" }

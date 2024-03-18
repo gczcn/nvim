@@ -10,6 +10,7 @@ return {
     'onsails/lspkind.nvim', -- vs-code like pictograms
     'hrsh7th/cmp-calc', -- nvim-cmp source for math calculation.
     'hrsh7th/cmp-emoji',
+    'hrsh7th/cmp-nvim-lua', -- nvim-cmp source for neovim Lua API
   },
   config = function()
     local fgdark = '#282828'
@@ -51,12 +52,12 @@ return {
     set_hl(0, 'CmpItemKindInterface', { fg = fgdark, bg = '#8ec07c' })
     set_hl(0, 'CmpItemKindColor', { fg = fgdark, bg = '#8ec07c' })
     set_hl(0, 'CmpItemKindTypeParameter', { fg = fgdark, bg = '#8ec07c' })
-    local limitStr = function(str)
-      if #str > 25 then
-        str = string.sub(str, 1, 22) .. '...'
-      end
-      return str
-    end
+    -- local limitStr = function(str)
+    --   if #str > 25 then
+    --     str = string.sub(str, 1, 22) .. '...'
+    --   end
+    --   return str
+    -- end
     local cmp = require('cmp')
     local luasnip = require('luasnip')
     local lspkind = require('lspkind')
@@ -78,21 +79,19 @@ return {
         format = function(entry, vim_item)
           local kind = lspkind.cmp_format({ mode = 'symbol_text', maxwidth = 50 })(entry, vim_item)
           local strings = vim.split(kind.kind, '%s', { trimempty = true })
-          kind.kind = ' ' .. (strings[1] or '') .. ' '
-          kind.menu = limitStr(entry:get_completion_item().detail or '')
-          kind.menu = '   ' .. kind.menu .. ' ' .. (strings[2] or '') .. ' '
-          kind.menu = kind.menu
-            .. ({
-              path = '[FS]',
-              buffer = '[Bf]',
-              nvim_lsp = '[LS]',
-              luasnip = '[Sn]',
-              nvim_lua = '[La]',
-              calc = '[CC]',
-              latex_symbols = '[LX]',
-              emoji = '[Em]'
-            })[entry.source.name]
-          return kind
+          vim_item.kind = ' ' .. (strings[1] or '') .. ' '
+          vim_item.menu = ({
+            path = '[FS]',
+            buffer = '[Bf]',
+            nvim_lsp = '[LS]',
+            luasnip = '[Sn]',
+            nvim_lua = '[Lu]',
+            calc = '[CC]',
+            latex_symbols = '[LX]',
+            emoji = '[Em]',
+          })[entry.source.name]
+          vim_item.menu = vim_item.menu .. ' ' .. (strings[2] or '')
+          return vim_item
         end,
       },
       completion = {
@@ -121,9 +120,10 @@ return {
         { name = 'nvim_lsp' },
         { name = 'calc' },
         { name = 'luasnip' }, -- snippets
+        { name = 'nvim_lua' },
         { name = 'buffer' }, -- text within current buffer
         { name = 'path' }, -- file system paths
-        { name = 'emoji' }
+        { name = 'emoji' },
       }),
     })
   end,

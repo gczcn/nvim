@@ -70,7 +70,7 @@ return {
           numhl = "",
         },
         rejected = {
-          text = "r",
+          text = "E",
           texthl = "LspDiagnosticsSignHint",
           linehl = "ErrorLine",
           numhl = "",

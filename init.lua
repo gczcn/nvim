@@ -9,4 +9,5 @@
 --   Other c language compilers
 
 require("core")
+require("util")
 require("plug")
