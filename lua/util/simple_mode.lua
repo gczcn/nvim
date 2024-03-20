@@ -35,6 +35,6 @@ local mode_map = {
   ['!'] = 'SH',
   ['t'] = 'TERM',
 }
-Util.simple_mode = function ()
+Utils.simple_mode = function ()
   return mode_map[vim.api.nvim_get_mode().mode] or '__'
 end

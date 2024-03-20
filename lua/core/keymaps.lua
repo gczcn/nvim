@@ -10,6 +10,7 @@ local i              = { 'i' }
 local ic             = { 'i', 'c' }
 local it             = { 'i', 't' }
 local c              = { 'c' }
+local t              = { 't' }
 
 local nmappings      = {
 
@@ -19,8 +20,10 @@ local nmappings      = {
   { from = ';',           to = ':',                                                              mode = nv },
   { from = 'Y',           to = '"+y',                                                            mode = nv },
   { from = 'P',           to = '"+gp',                                                           mode = nv },
+  { from = 'vr',          to = '`[v`]', },
   { from = '<M-v>',       to = '<cmd>normal"+gp<CR><right>',                                     mode = it },
-  { from = '`',           to = '~',                                                              mode = nv },
+  { from = '`',           to = '~<left>', },
+  { from = '`',           to = '~',                                                              mode = v },
   { from = '<M-q>',       to = '<ESC>',                                                          mode = i },
 
   -- Movement
@@ -136,7 +139,9 @@ local nmappings      = {
         end)
     end
   },
-  { from = '<leader>l', to = '<cmd>noh<CR>', mode = nv },
+  { from = '<leader>l',   to = '<cmd>noh<CR>',                                                     mode = nv },
+  { from = '<leader>mm',  to = '<cmd>Menu<CR>' },
+  { from = '<M-n>',       to = '<C-\\><C-n>',                                                      mode = t },
 
 }
 

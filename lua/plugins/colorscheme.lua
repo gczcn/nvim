@@ -14,15 +14,28 @@ return {
           WarnLine = { bg = '#403821' },
           HintLine = { bg = '#364230' },
           InfoLine = { bg = '#214039' },
+
+          -- floatwin
+          FloatBorder = { bg = '#282828', fg = '#ebdbb2' },
+          NormalFloat = { bg = '#282828' },
+
+          -- noice
+          NoiceCmdlinePopupBorder = { bg = '#282828' },
+          NoiceCmdlinePopupTitle = { bg = '#282828' },
+          NoiceCmdlineIcon = { bg = '#282828', fg = '#fabd2f' },
+          NoiceCmdlineIconSearch = { bg = '#282828', fg = '#fabd2f' },
+
+          -- lazy.nvim
+          LazyNormal = { bg = '#3c3836' },
+
+          -- which-key.nvim
+          WhichKeyFloat = { bg = '#3c3836' },
+
+          -- mason.nvim
+          MasonNormal = { bg = '#3c3836' },
         },
       })
       vim.cmd('colorscheme gruvbox')
-
-      -- noice
-      vim.api.nvim_set_hl(0, 'NoiceCmdlinePopupBorder', { bg = '#282828' })
-      vim.api.nvim_set_hl(0, 'NoiceCmdlinePopupTitle', { bg = '#282828' })
-      vim.api.nvim_set_hl(0, 'NoiceCmdlineIcon', { bg = '#282828', fg = '#fabd2f' })
-      vim.api.nvim_set_hl(0, 'NoiceCmdlineIconSearch', { bg = '#282828', fg = '#fabd2f' })
-    end
+    end,
   },
 }

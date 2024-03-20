@@ -26,9 +26,9 @@ end
 vim.keymap.set('n', '<M-->', function ()
   vim.o.guifont = font .. ',' .. symbol .. ':h' .. get_guifontsize() - 1
   print(get_guifontsize())
-end, {noremap = true})
+end, {noremap = true, desc = 'Increase gui font size'})
 
 vim.keymap.set('n', '<M-=>', function ()
   vim.o.guifont = font .. ',' .. symbol .. ':h' .. get_guifontsize() + 1
   print(get_guifontsize())
-end, {noremap = true})
+end, {noremap = true, desc = 'Reduce gui font size'})

@@ -39,24 +39,27 @@ return {
 
     -- Set menu
     startify.section.top_buttons.val = {
-      startify.button('n', '  New File', '<cmd>ene<CR>'),
-      startify.button('F', '󰈞  Find file', '<cmd>Telescope find_files<CR>'),
-      startify.button('f', '󰈬  Find word', '<cmd>Telescope live_grep<CR>'),
-      startify.button('S', '󰅳  grep string', '<cmd>Telescope grep_string<CR>'),
-      startify.button('r', '  Recent files', '<cmd>Telescope oldfiles<CR>'),
-      startify.button('s', '  Restore Session', '<cmd>lua require("persistence").load()<CR>'),
-      startify.button('v', '  Neotree file explorer', '<cmd>Neotree toggle<CR>'),
-      startify.button('i', '  Oil file explorer', '<cmd>Oil<CR>'),
-      startify.button('k', '󰌌  Keymaps', '<cmd>Telescope keymaps<CR>'),
-      startify.button('c', '  Colorscheme', '<cmd>Telescope colorscheme<CR>'),
-      startify.button('t', '  Terminal', '<cmd>ToggleTerm<CR>'),
-      startify.button('l', '󰒲  Lazy', '<cmd>Lazy<CR>'),
-      startify.button('L', '󰚰  Lazy Sync', '<cmd>Lazy sync<CR>'),
-      startify.button('m', '󰌗  Mason', '<cmd>Mason<CR>'),
-      startify.button('o', '  Options', '<cmd>Neotree ~/.config/nvim<CR>'),
-      startify.button('p', '󰼭  Speedtyper', '<cmd>Speedtyper<CR>'),
-      startify.button('x', '󰍜  More', '<cmd>MoreMenu<CR>'),
-      startify.button('h', '󰮥  Help', ':h '),
+      startify.button('ne', '  New File', '<cmd>ene<CR>'),
+      startify.button('ff', '󰈞  Find file', '<cmd>Telescope find_files<CR>'),
+      startify.button('fw', '󰈬  Find word', '<cmd>Telescope live_grep<CR>'),
+      startify.button('gs', '󰅳  grep string', '<cmd>Telescope grep_string<CR>'),
+      startify.button('rf', '  Recent files', '<cmd>Telescope oldfiles<CR>'),
+      startify.button('bm', '  Bookmarks', '<cmd>Telescope bookmarks<CR>'),
+      startify.button('rs', '  Restore Session', '<cmd>lua require("persistence").load()<CR>'),
+      startify.button('nf', '  Neotree file explorer', '<cmd>Neotree toggle<CR>'),
+      startify.button('of', '  Oil file explorer', '<cmd>Oil<CR>'),
+      startify.button('tf', '  Telescope file explorer', '<cmd>Telescope file_browser<CR>'),
+      startify.button('km', '󰌌  Keymaps', '<cmd>Telescope keymaps<CR>'),
+      startify.button('cs', '  Colorscheme', '<cmd>Telescope colorscheme<CR>'),
+      startify.button('tr', '  Terminal', '<cmd>ToggleTerm<CR>'),
+      startify.button('ly', '󰒲  Lazy', '<cmd>Lazy<CR>'),
+      startify.button('ls', '󰚰  Lazy Sync', '<cmd>Lazy sync<CR>'),
+      startify.button('mn', '󰌗  Mason', '<cmd>Mason<CR>'),
+      -- startify.button('ot', '  Options', '<cmd>Neotree ~/.config/nvim<CR>'),
+      startify.button('ot', '  Options', '<cmd>Telescope file_browser path=~/.config/nvim<CR>'),
+      startify.button('st', '󰼭  Speedtyper', '<cmd>Speedtyper<CR>'),
+      startify.button('me', '󰍜  More', '<cmd>Menu<CR>'),
+      startify.button('hp', '󰮥  Help', ':h '),
     }
 
     -- Send config to alpha
@@ -68,11 +71,36 @@ return {
     if vim.o.filetype == 'lazy' then
       vim.cmd [[q]]
     end
-    if vim.o.filetype ~= 'oil' and vim.o.filetype ~= 'neo-tree' then
+    if vim.o.filetype ~= 'oil' and vim.o.filetype ~= 'neo-tree' and vim.o.filetype ~= 'netrw' and vim.o.filetype ~= 'TelescopePrompt' then
       if vim.fn.expand('%') == '' then
         vim.cmd [[Alpha]]
         vim.cmd [[bd 1]]
       end
     end
+    vim.api.nvim_create_autocmd("User", {
+      group = vim.api.nvim_create_augroup("TuoGroup", { clear = false }),
+      pattern = "LazyVimStarted",
+      callback = function()
+        local stats = require("lazy").stats()
+        local footer_val = string.format(
+          "󱐋 %d/%d plugins loaded in %.3f ms",
+          stats.loaded,
+          stats.count,
+          stats.startuptime
+        )
+        startify.config.section.footer.val = footer_val
+        for _, s in ipairs({ "LazyStart", "LazyDone", "UIEnter" }) do
+          table.insert(startify.config.section.lazystats.val, {
+            opts = {
+              hl = "Special",
+              position = "center",
+            },
+            type = "text",
+            val = string.format("%s %.3f ms", s, stats.times[s]),
+          })
+        end
+        pcall(vim.cmd.AlphaRedraw)
+      end,
+    })
   end
 }

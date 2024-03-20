@@ -1,6 +1,9 @@
 return {
   "folke/which-key.nvim",
   event = "VeryLazy",
+  keys = {
+    { '<leader>wk', '<cmd>WhichKey<CR>' }
+  },
   init = function()
     vim.o.timeout = true
     vim.o.timeoutlen = 300

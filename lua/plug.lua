@@ -11,6 +11,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+vim.keymap.set("n", "<leader>pl", ":Lazy<CR>", { noremap = true })
+
 require('lazy').setup({
   { import = 'plugins' },
   { import = 'plugins.lsp' },
