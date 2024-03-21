@@ -41,7 +41,6 @@ opt.conceallevel = 2                                -- Hide * markup for bold an
 opt.confirm = true                                  -- Confirm to save changes before exiting modified buffer
 opt.colorcolumn = "100"                             -- Line number reminder
 opt.copyindent = true                               -- copy the previous indentation on autoindenting
-opt.expandtab = true                                -- enable the use of space in tab
 opt.history = 300
 opt.linebreak = true                                -- wrap lines at 'breakat'
 opt.undofile = true

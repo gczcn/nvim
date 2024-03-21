@@ -21,7 +21,7 @@ local nmappings      = {
   { from = 'Y',           to = '"+y',                                                            mode = nv },
   { from = 'P',           to = '"+gp',                                                           mode = nv },
   { from = 'vr',          to = '`[v`]', },
-  { from = '<M-v>',       to = '<cmd>normal"+gp<CR><right>',                                     mode = it },
+  { from = '<M-v>',       to = '<cmd>normal! "+gp<CR><right>',                                   mode = it },
   { from = '`',           to = '~<left>', },
   { from = '`',           to = '~',                                                              mode = v },
   { from = '<M-q>',       to = '<ESC>',                                                          mode = i },
@@ -108,7 +108,7 @@ local nmappings      = {
   { from = '<M-`>',       to = '``<left>',                                                       mode = ic },
   { from = '<M-">',       to = '""<left>',                                                       mode = ic },
   { from = '<M-#>',       to = '##<left>',                                                       mode = ic },
-  { from = '<M-t>',       to = '<CR><ESC>O',                                                     mode = ic },
+  { from = '<M-t>',       to = '<CR><ESC>O',                                                     mode = i },
 
   -- Other
   {
@@ -142,6 +142,12 @@ local nmappings      = {
   { from = '<leader>l',   to = '<cmd>noh<CR>',                                                     mode = nv },
   { from = '<leader>mm',  to = '<cmd>Menu<CR>' },
   { from = '<M-n>',       to = '<C-\\><C-n>',                                                      mode = t },
+  { from = '<M-=>',       to = function ()
+    vim.cmd('normal! ciw' .. vim.fn.expand('<cword>') + 1)
+  end },
+  { from = '<M-->',       to = function ()
+    vim.cmd('normal! ciw' .. vim.fn.expand('<cword>') - 1)
+  end },
 
 }
 

@@ -16,23 +16,14 @@ return {
           InfoLine = { bg = '#214039' },
 
           -- floatwin
-          FloatBorder = { bg = '#282828', fg = '#ebdbb2' },
-          NormalFloat = { bg = '#282828' },
+          FloatTitle = { bg = '#3c3836', bold = true, fg = '#b8bb26' },
+          FloatFooter = { bg = '#3c3836', bold = true, fg = '#b8bb26' },
 
           -- noice
           NoiceCmdlinePopupBorder = { bg = '#282828' },
           NoiceCmdlinePopupTitle = { bg = '#282828' },
           NoiceCmdlineIcon = { bg = '#282828', fg = '#fabd2f' },
           NoiceCmdlineIconSearch = { bg = '#282828', fg = '#fabd2f' },
-
-          -- lazy.nvim
-          LazyNormal = { bg = '#3c3836' },
-
-          -- which-key.nvim
-          WhichKeyFloat = { bg = '#3c3836' },
-
-          -- mason.nvim
-          MasonNormal = { bg = '#3c3836' },
         },
       })
       vim.cmd('colorscheme gruvbox')
