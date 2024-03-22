@@ -16,8 +16,8 @@ return {
 
 		vim.keymap.set("n", "<S-Tab>", "<Plug>(cokeline-focus-prev)", { silent = true })
 		vim.keymap.set("n", "<Tab>", "<Plug>(cokeline-focus-next)", { silent = true })
-		vim.keymap.set("n", "<Leader>n", "<Plug>(cokeline-switch-prev)", { silent = true })
-		vim.keymap.set("n", "<Leader>i", "<Plug>(cokeline-switch-next)", { silent = true })
+		vim.keymap.set("n", "<Leader>N", "<Plug>(cokeline-switch-prev)", { silent = true })
+		vim.keymap.set("n", "<Leader>I", "<Plug>(cokeline-switch-next)", { silent = true })
 		for i = 1, 9 do
 			vim.keymap.set("n", ("<leader>%s"):format(i), ("<Plug>(cokeline-focus-%s)"):format(i), { silent = true })
 			vim.keymap.set("n", ("<leader>d%s"):format(i), ("<Plug>(cokeline-switch-%s)"):format(i), { silent = true })

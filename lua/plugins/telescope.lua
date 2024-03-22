@@ -7,6 +7,7 @@ return {
     { 'tr', '<cmd>Telescope oldfiles<CR>' },
     { 'ts', '<cmd>Telescope live_grep<CR>' },
     { 'tc', '<cmd>Telescope grep_string<CR>' },
+    { 'tk', '<cmd>Telescope keymaps<CR>' },
     { 'tn', '<cmd>Telescope notify<CR>' },
     { 'ty', '<cmd>Telescope neoclip<CR>', mode = 'n' },
     { 'tu', '<cmd>Telescope undo<CR>' },

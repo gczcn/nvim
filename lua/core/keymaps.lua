@@ -13,15 +13,16 @@ local c              = { 'c' }
 local t              = { 't' }
 
 local nmappings      = {
-
   { from = 'S',           to = '<cmd>w<CR>' },
   { from = 'Q',           to = '<cmd>q<CR>' },
   { from = '<leader>bd',  to = '<cmd>bd<CR>' },
   { from = ';',           to = ':',                                                              mode = nv },
-  { from = 'Y',           to = '"+y',                                                            mode = nv },
-  { from = 'P',           to = '"+gp',                                                           mode = nv },
+  { from = '<M-y>',       to = '"+y',                                                            mode = nv },
+  { from = '<M-Y>',       to = '"+Y',                                                            mode = nv },
+  { from = '<M-p>',       to = '"+p',                                                            mode = nv,},
+  { from = '<M-P>',       to = '"+P',                                                            mode = nv,},
   { from = 'vr',          to = '`[v`]', },
-  { from = '<M-v>',       to = '<cmd>normal! "+gp<CR><right>',                                   mode = it },
+  { from = '<M-v>',       to = '<cmd>normal! "+P<CR>',                                           mode = it },
   { from = '`',           to = '~<left>', },
   { from = '`',           to = '~',                                                              mode = v },
   { from = '<M-q>',       to = '<ESC>',                                                          mode = i },
@@ -98,7 +99,7 @@ local nmappings      = {
   { from = '<M-i>',       to = '9',                                                              mode = nvo },
   { from = '<M-o>',       to = '0',                                                              mode = nvo },
 
-  -- Pairs
+  -- PairsCancel the highlighting of vim.highlight
   { from = '<M-BS>',      to = '<BS><Del>',                                                      mode = ic },
   { from = '<M-[>',       to = '[]<left>',                                                       mode = ic },
   { from = '<M-{>',       to = '{}<left>',                                                       mode = ic },
@@ -153,5 +154,5 @@ local nmappings      = {
 
 for _, mapping in ipairs(nmappings) do
   -- map(mapping.mode or 'n', mapping.from, mapping.to, { noremap = true, silent = true })
-  vim.keymap.set(mapping.mode or 'n', mapping.from, mapping.to, { noremap = true })
+  vim.keymap.set(mapping.mode or 'n', mapping.from, mapping.to, { noremap = mapping.noremap or true, desc = mapping.desc or nil })
 end

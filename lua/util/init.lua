@@ -1,5 +1,5 @@
 Utils = {}
 
-require('util.moremenu')
+require('util.menu')
 require('util.simple_mode')
 require('util.dump')

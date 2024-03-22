@@ -151,8 +151,8 @@ leader key settings:
 ##### 1.7 Register related settings
 |Shortcut|Action|Equivalent|
 |--------|------|----------|
-|`Y`|Copy to system clipboard|`"+y`|
-|`P`|Paste to system clipboard|`"+gp`|
+|`<M-y>`|Copy to system clipboard|`"+y`|
+|`<M-p>`|Paste to system clipboard|`"+gp`|
 |`<M-v>`|Paste to system clipboard (mode = i)|`:normal"+gp<CR><right>`|
 
 #### 2 Window Management

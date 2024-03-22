@@ -55,7 +55,6 @@ return {
       startify.button('ly', '󰒲  Lazy', '<cmd>Lazy<CR>'),
       startify.button('ls', '󰚰  Lazy Sync', '<cmd>Lazy sync<CR>'),
       startify.button('mn', '󰌗  Mason', '<cmd>Mason<CR>'),
-      -- startify.button('ot', '  Options', '<cmd>Neotree ~/.config/nvim<CR>'),
       startify.button('ot', '  Options', '<cmd>Telescope file_browser path=~/.config/nvim<CR>'),
       startify.button('st', '󰼭  Speedtyper', '<cmd>Speedtyper<CR>'),
       startify.button('me', '󰍜  More', '<cmd>Menu<CR>'),
