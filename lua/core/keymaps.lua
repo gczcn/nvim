@@ -99,7 +99,7 @@ local nmappings      = {
   { from = '<M-i>',       to = '9',                                                              mode = nvo },
   { from = '<M-o>',       to = '0',                                                              mode = nvo },
 
-  -- PairsCancel the highlighting of vim.highlight
+  -- Pairs
   { from = '<M-BS>',      to = '<BS><Del>',                                                      mode = ic },
   { from = '<M-[>',       to = '[]<left>',                                                       mode = ic },
   { from = '<M-{>',       to = '{}<left>',                                                       mode = ic },
