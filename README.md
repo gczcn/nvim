@@ -23,6 +23,7 @@
 
 ## Dependencies
 * [**Neovim**](https://neovim.io/) >= 0.10 (nightly)
+* [curl](https://curl.se/)
 * [git](https://git-scm.com/)
 * [node.js](https://nodejs.org/)
 * [npm](https://www.npmjs.com/)

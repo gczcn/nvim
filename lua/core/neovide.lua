@@ -1,6 +1,7 @@
 local font = 'Terminus (TTF)'
 local default_fontsize = 12
 local symbol = 'Terminess Nerd Font Mono'
+-- local symbol = 'Unifont'
 
 -- vim.o.guifont = font .. ':h' .. default_fontsize
 vim.o.guifont = font .. ',' .. symbol .. ':h' .. default_fontsize

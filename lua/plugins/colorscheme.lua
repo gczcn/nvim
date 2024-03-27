@@ -29,4 +29,13 @@ return {
       vim.cmd('colorscheme gruvbox')
     end,
   },
+  {
+    'EdenEast/nightfox.nvim',
+    lazy = true,
+    enabled = false,
+    priority = 1000,
+    config = function ()
+      vim.cmd('colorscheme nightfox')
+    end
+  },
 }

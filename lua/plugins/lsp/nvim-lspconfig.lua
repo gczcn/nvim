@@ -29,6 +29,15 @@ return {
     end,
   },
   {
+    'smjonas/inc-rename.nvim',
+    event = { 'BufReadPre', 'BufNewFile' },
+    config = function ()
+      require("inc_rename").setup({
+        -- input_buffer_type = "dressing",
+      })
+    end
+  },
+  {
     'neovim/nvim-lspconfig',
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
@@ -60,8 +69,10 @@ return {
         opts.desc = 'See available code actions'
         vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
 
+        -- inc-rename
         opts.desc = 'Smart rename'
-        vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts) -- smart rename
+        -- vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts) -- smart rename
+        vim.keymap.set('n', '<leader>rn', ':IncRename ')
 
         opts.desc = 'Show buffer diagnostics'
         vim.keymap.set('n', '<leader>D', '<cmd>Telescope diagnostics bufnr=0<CR>', opts) -- show  diagnostics for file
