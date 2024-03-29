@@ -14,8 +14,10 @@ return {
     { 'te', '<cmd>Telescope file_browser<CR>' },
     { 'tE', '<cmd>Telescope file_browser path=%:p:h<CR>' },
     { 'tj', '<cmd>Telescope emoji<CR>' },
-    { 'tg', '<cmd>Telescope glyph<CR>' },
+    { 'tG', '<cmd>Telescope glyph<CR>' },
     { 'tb', '<cmd>Telescope bookmarks<CR>' },
+    { 'tg', '<cmd>Telescope nerdy<CR>' },
+    { 'ta', '<cmd>Telescope aerial<CR>' },
   },
   branch = '0.1.x',
   dependencies = {
@@ -29,6 +31,9 @@ return {
     'xiyaowong/telescope-emoji.nvim',
     'ghassan0/telescope-glyph.nvim',
     'crusj/bookmarks.nvim',
+    '2kabhishek/nerdy.nvim',
+    'stevearc/dressing.nvim',
+    'stevearc/aerial.nvim',
   },
   init = function()
     if vim.fn.argc(-1) == 1 then
@@ -92,6 +97,8 @@ return {
     telescope.load_extension('file_browser')
     telescope.load_extension('emoji')
     telescope.load_extension('glyph')
-    telescope.load_extension("bookmarks")
+    telescope.load_extension('bookmarks')
+    telescope.load_extension('nerdy')
+    telescope.load_extension("aerial")
   end,
 }

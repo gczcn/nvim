@@ -21,6 +21,8 @@ local nmappings      = {
   { from = '<M-Y>',       to = '"+Y',                                                            mode = nv },
   { from = '<M-p>',       to = '"+p',                                                            mode = nv,},
   { from = '<M-P>',       to = '"+P',                                                            mode = nv,},
+  { from = '<leader>p',   to = '"+p' },
+  { from = '<leader>P',   to = '"+P' },
   { from = 'vr',          to = '`[v`]', },
   { from = '<M-v>',       to = '<cmd>normal! "+P<CR>',                                           mode = it },
   { from = '`',           to = '~<left>', },
@@ -100,16 +102,16 @@ local nmappings      = {
   { from = '<M-o>',       to = '0',                                                              mode = nvo },
 
   -- Pairs
-  { from = '<M-BS>',      to = '<BS><Del>',                                                      mode = ic },
-  { from = '<M-[>',       to = '[]<left>',                                                       mode = ic },
-  { from = '<M-{>',       to = '{}<left>',                                                       mode = ic },
-  { from = '<M-(>',       to = '()<left>',                                                       mode = ic },
   { from = '<M-<>',       to = '<><left>',                                                       mode = ic },
-  { from = "<M-'>",       to = "''<left>",                                                       mode = ic },
-  { from = '<M-`>',       to = '``<left>',                                                       mode = ic },
-  { from = '<M-">',       to = '""<left>',                                                       mode = ic },
   { from = '<M-#>',       to = '##<left>',                                                       mode = ic },
   { from = '<M-t>',       to = '<CR><ESC>O',                                                     mode = i },
+  -- { from = '<M-BS>',      to = '<BS><Del>',                                                      mode = ic },
+  -- { from = '<M-[>',       to = '[]<left>',                                                       mode = ic },
+  -- { from = '<M-{>',       to = '{}<left>',                                                       mode = ic },
+  -- { from = '<M-(>',       to = '()<left>',                                                       mode = ic },
+  -- { from = "<M-'>",       to = "''<left>",                                                       mode = ic },
+  -- { from = '<M-`>',       to = '``<left>',                                                       mode = ic },
+  -- { from = '<M-">',       to = '""<left>',                                                       mode = ic },
 
   -- Other
   {
