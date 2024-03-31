@@ -151,10 +151,8 @@ local nmappings      = {
   { from = '<M-->',       to = function ()
     vim.cmd('normal! ciw' .. vim.fn.expand('<cword>') - 1)
   end },
-
 }
 
 for _, mapping in ipairs(nmappings) do
-  -- map(mapping.mode or 'n', mapping.from, mapping.to, { noremap = true, silent = true })
   vim.keymap.set(mapping.mode or 'n', mapping.from, mapping.to, { noremap = mapping.noremap or true, desc = mapping.desc or nil })
 end
