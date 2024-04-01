@@ -18,6 +18,7 @@ return {
     { 'tb', '<cmd>Telescope bookmarks<CR>' },
     { 'tg', '<cmd>Telescope nerdy<CR>' },
     { 'ta', '<cmd>Telescope aerial<CR>' },
+    { 'tz', '<cmd>Telescope z<CR>' },
   },
   branch = '0.1.x',
   dependencies = {
@@ -34,6 +35,7 @@ return {
     '2kabhishek/nerdy.nvim',
     'stevearc/dressing.nvim',
     'stevearc/aerial.nvim',
+    'nvim-telescope/telescope-z.nvim',
   },
   init = function()
     if vim.fn.argc(-1) == 1 then
@@ -100,5 +102,6 @@ return {
     telescope.load_extension('bookmarks')
     telescope.load_extension('nerdy')
     telescope.load_extension("aerial")
+    telescope.load_extension("z")
   end,
 }

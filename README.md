@@ -31,6 +31,7 @@
 * [xclip](https://github.com/astrand/xclip) (or other clipboard tools)
 * [make](https://www.gnu.org/software/make/)
 * [Lazygit](https://github.com/jesseduffield/lazygit)
+* [z](https://github.com/rupa/z/)
 * Optional:
   - [Nerd Font](https://www.nerdfonts.com/)
 

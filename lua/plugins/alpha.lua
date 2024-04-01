@@ -40,6 +40,7 @@ return {
     -- Set menu
     startify.section.top_buttons.val = {
       startify.button('ne', '  New File', '<cmd>ene<CR>'),
+      startify.button('zc', '  Z jump', '<cmd>Telescope z<CR>'),
       startify.button('ff', '󰈞  Find file', '<cmd>Telescope find_files<CR>'),
       startify.button('fw', '󰈬  Find word', '<cmd>Telescope live_grep<CR>'),
       startify.button('gs', '󰅳  grep string', '<cmd>Telescope grep_string<CR>'),
