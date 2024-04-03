@@ -1,5 +1,7 @@
 # Neovim configuration for [Colemak](https://colemak.com) users
 
+> NOTE: This readme may be out of date and not yet complete
+
 [chinese README](./README.zh_CN.md)
 
 ## Table of contents

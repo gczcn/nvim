@@ -72,7 +72,9 @@ return {
         -- inc-rename
         opts.desc = 'Smart rename'
         -- vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts) -- smart rename
-        vim.keymap.set('n', '<leader>rn', ':IncRename ')
+        vim.keymap.set('n', '<leader>rn', function ()
+          return ":IncRename " .. vim.fn.expand("<cword>")
+        end, { noremap = true, expr = true })
 
         opts.desc = 'Show buffer diagnostics'
         vim.keymap.set('n', '<leader>D', '<cmd>Telescope diagnostics bufnr=0<CR>', opts) -- show  diagnostics for file

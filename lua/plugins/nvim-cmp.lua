@@ -11,6 +11,16 @@ return {
     'hrsh7th/cmp-calc', -- nvim-cmp source for math calculation.
     'hrsh7th/cmp-emoji',
     'hrsh7th/cmp-nvim-lua', -- nvim-cmp source for neovim Lua API
+    'ray-x/cmp-treesitter',
+    {
+      'tzachar/cmp-tabnine',
+      build = './install.sh',
+      dependencies = {
+        'hrsh7th/nvim-cmp',
+      },
+      config = function ()
+      end
+    }
   },
   config = function()
     local fgdark = '#282828'
@@ -64,31 +74,64 @@ return {
 
     -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
     require('luasnip.loaders.from_vscode').lazy_load()
-
+    require('lspkind').init({
+      symbol_map = {
+        Text = '󰉿',
+        Method = '󰆧',
+        Function = '󰊕',
+        Constructor = '',
+        Comment = '',
+        Field = '󰜢',
+        Variable = '󰀫',
+        Class = '󰠱',
+        Interface = '',
+        Module = '',
+        Property = '󰜢',
+        Unit = '󰑭',
+        Value = '󰎠',
+        Enum = '',
+        Keyword = '󰌋',
+        Snippet = '',
+        Color = '󰏘',
+        File = '󰈙',
+        Reference = '󰈇',
+        Folder = '󰉋',
+        EnumMember = '',
+        Constant = '󰏿',
+        String = '󰅳',
+        Struct = '󰙅',
+        Event = '',
+        Operator = '󰆕',
+        TabNine = 'A',
+        TypeParameter = '',
+      },
+    })
     cmp.setup({
       window = {
         completion = {
           winhighlight = 'Normal:Pmenu,FloatBorder:Pmenu,Search:None',
           col_offset = -3,
+          -- col_offset = 0,
           side_padding = 0,
         },
       },
-
       formatting = {
         fields = { 'kind', 'abbr', 'menu' },
         format = function(entry, vim_item)
           local kind = lspkind.cmp_format({ mode = 'symbol_text', maxwidth = 50 })(entry, vim_item)
           local strings = vim.split(kind.kind, '%s', { trimempty = true })
           vim_item.kind = ' ' .. (strings[1] or '') .. ' '
+          -- vim_item.kind = ' ' .. '114' ..  ' '
           vim_item.menu = ({
             path = '[FS]',
-            buffer = '[Bf]',
+            buffer = '[BF]',
             nvim_lsp = '[LS]',
-            luasnip = '[Sn]',
-            nvim_lua = '[Lu]',
+            luasnip = '[SN]',
+            nvim_lua = '[LU]',
             calc = '[CC]',
-            latex_symbols = '[LX]',
-            emoji = '[Em]',
+            emoji = '[EM]',
+            treesitter = '[TS]',
+            cmp_tabnine = '[TN]',
           })[entry.source.name]
           vim_item.menu = vim_item.menu .. ' ' .. (strings[2] or '')
           return vim_item
@@ -123,6 +166,8 @@ return {
         { name = 'nvim_lua' },
         { name = 'buffer' }, -- text within current buffer
         { name = 'path' }, -- file system paths
+        { name = 'treesitter' },
+        { name = 'cmp_tabnine' },
         { name = 'emoji' },
       }),
     })

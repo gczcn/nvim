@@ -45,7 +45,7 @@ return {
       startify.button('fw', '󰈬  Find word', '<cmd>Telescope live_grep<CR>'),
       startify.button('gs', '󰅳  grep string', '<cmd>Telescope grep_string<CR>'),
       startify.button('rf', '  Recent files', '<cmd>Telescope oldfiles<CR>'),
-      startify.button('bm', '  Bookmarks', '<cmd>Telescope bookmarks<CR>'),
+      startify.button('bm', '  Bookmarks', '<cmd>Telescope bookmarks list<CR>'),
       startify.button('rs', '  Restore Session', '<cmd>lua require("persistence").load()<CR>'),
       startify.button('nf', '  Neotree file explorer', '<cmd>Neotree toggle<CR>'),
       startify.button('of', '  Oil file explorer', '<cmd>Oil<CR>'),

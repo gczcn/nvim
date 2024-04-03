@@ -47,7 +47,9 @@ local options = {
   smoothscroll = true,
   pumblend = 25,                                   -- Set popup menu transparency
   fillchars = { foldopen = "-", foldclose = ">" },
-  laststatus = 0
+  laststatus = 0,
+  spell = true,
+  spelllang = { 'en_us' },
 }
 
 for key, value in pairs(options) do

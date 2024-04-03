@@ -105,13 +105,13 @@ local nmappings      = {
   { from = '<M-<>',       to = '<><left>',                                                       mode = ic },
   { from = '<M-#>',       to = '##<left>',                                                       mode = ic },
   { from = '<M-t>',       to = '<CR><ESC>O',                                                     mode = i },
-  -- { from = '<M-BS>',      to = '<BS><Del>',                                                      mode = ic },
-  -- { from = '<M-[>',       to = '[]<left>',                                                       mode = ic },
-  -- { from = '<M-{>',       to = '{}<left>',                                                       mode = ic },
-  -- { from = '<M-(>',       to = '()<left>',                                                       mode = ic },
-  -- { from = "<M-'>",       to = "''<left>",                                                       mode = ic },
-  -- { from = '<M-`>',       to = '``<left>',                                                       mode = ic },
-  -- { from = '<M-">',       to = '""<left>',                                                       mode = ic },
+  { from = '<M-BS>',      to = '<BS><Del>',                                                      mode = c },
+  { from = '<M-[>',       to = '[]<left>',                                                       mode = c },
+  { from = '<M-{>',       to = '{}<left>',                                                       mode = c },
+  { from = '<M-(>',       to = '()<left>',                                                       mode = c },
+  { from = "<M-'>",       to = "''<left>",                                                       mode = c },
+  { from = '<M-`>',       to = '``<left>',                                                       mode = c },
+  { from = '<M-">',       to = '""<left>',                                                       mode = c },
 
   -- Other
   {
@@ -143,7 +143,6 @@ local nmappings      = {
     end
   },
   { from = '<leader>l',   to = '<cmd>noh<CR>',                                                     mode = nv },
-  { from = '<leader>mm',  to = '<cmd>Menu<CR>' },
   { from = '<M-n>',       to = '<C-\\><C-n>',                                                      mode = t },
   { from = '<M-=>',       to = function ()
     vim.cmd('normal! ciw' .. vim.fn.expand('<cword>') + 1)

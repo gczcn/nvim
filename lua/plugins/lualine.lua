@@ -16,6 +16,15 @@ return {
       return Utils.dump(clients_list)
     end
 
+    local default_sections = {
+      lualine_a = { Utils.simple_mode },
+      lualine_b = { 'filename', 'searchcount', 'selectioncount', 'branch', 'diff' },
+      lualine_c = { 'diagnostics', 'filetype', 'filesize' },
+      lualine_x = { 'tabnine', lsp_clients, 'encoding', 'hostname', 'fileformat' },
+      lualine_y = { 'progress', 'location' },
+      lualine_z = { get_date },
+    }
+
     require('lualine').setup({
       options = {
         -- theme = bubbles_theme,
@@ -23,22 +32,8 @@ return {
         -- section_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
       },
-      sections = {
-        lualine_a = { Utils.simple_mode },
-        lualine_b = { 'filename', 'searchcount', 'selectioncount', 'branch', 'diff' },
-        lualine_c = { 'diagnostics', 'filetype', 'filesize' },
-        lualine_x = { lsp_clients, 'encoding', 'hostname', 'fileformat' },
-        lualine_y = { 'progress', 'location' },
-        lualine_z = { get_date },
-      },
-      inactive_sections = {
-        lualine_a = { Utils.simple_mode },
-        lualine_b = { 'filename', 'searchcount', 'selectioncount', 'branch', 'diff' },
-        lualine_c = { 'diagnostics', 'filetype' },
-        lualine_x = { lsp_clients, 'encoding', 'hostname', 'fileformat' },
-        lualine_y = { 'progress', 'location' },
-        lualine_z = { get_date },
-      },
+      sections = default_sections,
+      inactive_sections = default_sections,
 
       tabline = {},
       extensions = {},

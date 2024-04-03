@@ -1,5 +1,6 @@
 local autocmd = vim.api.nvim_create_autocmd
 
+-- Line breaks are not automatically commented
 autocmd('FileType', {
   pattern = '*',
   callback = function ()
@@ -7,6 +8,7 @@ autocmd('FileType', {
   end
 })
 
+-- Highlight when copying
 autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   callback = function ()

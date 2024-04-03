@@ -15,7 +15,7 @@ return {
     { 'tE', '<cmd>Telescope file_browser path=%:p:h<CR>' },
     { 'tj', '<cmd>Telescope emoji<CR>' },
     { 'tG', '<cmd>Telescope glyph<CR>' },
-    { 'tb', '<cmd>Telescope bookmarks<CR>' },
+    { 'tb', '<cmd>Telescope bookmarks list<CR>' },
     { 'tg', '<cmd>Telescope nerdy<CR>' },
     { 'ta', '<cmd>Telescope aerial<CR>' },
     { 'tz', '<cmd>Telescope z<CR>' },
