@@ -31,7 +31,7 @@ return {
     'nvim-telescope/telescope-file-browser.nvim',
     'xiyaowong/telescope-emoji.nvim',
     'ghassan0/telescope-glyph.nvim',
-    'crusj/bookmarks.nvim',
+    'tomasky/bookmarks.nvim',
     '2kabhishek/nerdy.nvim',
     'stevearc/dressing.nvim',
     'stevearc/aerial.nvim',
