@@ -9,10 +9,10 @@ return {
 
     local kopts = { noremap = true, silent = true }
 
-    vim.api.nvim_set_keymap('n', '<C-=>',
+    vim.api.nvim_set_keymap('n', "<C-'>",
       [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]],
       kopts)
-    vim.api.nvim_set_keymap('n', '<C-+>',
+    vim.api.nvim_set_keymap('n', '<C-[>',
       [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]],
       kopts)
     vim.api.nvim_set_keymap('n', '*', [[*<Cmd>lua require('hlslens').start()<CR>]], kopts)

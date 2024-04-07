@@ -1,6 +1,6 @@
-local font = 'Terminus (TTF)'
-local default_fontsize = 12
-local symbol = 'Terminess Nerd Font Mono'
+local font = 'FiraCode Nerd Font Mono'
+local default_fontsize = 11
+local symbol = 'FiraCode Nerd Font Mono'
 -- local symbol = 'Unifont'
 
 -- vim.o.guifont = font .. ':h' .. default_fontsize

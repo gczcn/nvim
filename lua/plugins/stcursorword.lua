@@ -6,7 +6,7 @@ return {
       highlight = {
         underline = true,
         fg = nil,
-        bg = '#3c3836',
+        -- bg = '#3c3836',
       },
     })
   end,
