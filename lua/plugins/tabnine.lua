@@ -1,6 +1,7 @@
 return {
   'codota/tabnine-nvim',
   event = 'InsertEnter',
+  enabled = vim.g.enabledtabnine,
   build = './dl_binaries.sh',
   config = function()
     require('tabnine').setup({

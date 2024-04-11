@@ -4,7 +4,7 @@ return {
   config = function()
     require('hlchunk').setup({
       indent = {
-        chars = { '│', '┆', '┊' },
+        chars = { '│' },
       },
       blank = {
         enable = false,

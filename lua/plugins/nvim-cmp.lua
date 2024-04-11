@@ -14,6 +14,7 @@ return {
     'ray-x/cmp-treesitter',
     {
       'tzachar/cmp-tabnine',
+      enabled = vim.g.enabledtabnine,
       build = './install.sh',
       dependencies = {
         'hrsh7th/nvim-cmp',
