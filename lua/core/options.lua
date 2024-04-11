@@ -56,4 +56,5 @@ for key, value in pairs(options) do
   vim.opt[key] = value
 end
 
-vim.g.enabledtabnine = true
+-- If using TTY, set the following to false
+vim.g.notty = true

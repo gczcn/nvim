@@ -24,7 +24,7 @@ return {
   dependencies = {
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     'nvim-lua/plenary.nvim',
-    'nvim-tree/nvim-web-devicons',
+    -- 'nvim-tree/nvim-web-devicons',
     'AckslD/nvim-neoclip.lua',
     { 'kkharji/sqlite.lua', module = 'sqlite' },
     'debugloop/telescope-undo.nvim',
