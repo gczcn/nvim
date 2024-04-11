@@ -1,5 +1,7 @@
-vim.cmd('command! Wqa :wqa')
-vim.cmd('command! WQa :wqa')
-vim.cmd('command! WQA :wqa')
-vim.cmd('command! Q :q')
-vim.cmd('command! Q1 :q!')
+local create_command = vim.api.nvim_create_user_command
+
+create_command('Wqa', 'wqa', {})
+create_command('WQa', 'wqa', {})
+create_command('WQA', 'wqa', {})
+create_command('Q', 'q', {})
+create_command('Q1', 'q!', {})

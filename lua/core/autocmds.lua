@@ -15,3 +15,10 @@ autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end
 })
+
+autocmd('FileType', {
+  pattern = { 'json', 'lsonc', 'markdown' },
+  callback = function()
+    vim.wo.conceallevel = 0
+  end
+})

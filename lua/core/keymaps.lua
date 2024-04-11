@@ -13,6 +13,7 @@ local c              = { 'c' }
 local t              = { 't' }
 
 local nmappings      = {
+  { from = '<ESC>',       to = '<ESC>' },
   { from = 'S',           to = '<cmd>w<CR>' },
   { from = 'Q',           to = '<cmd>q<CR>' },
   { from = '<leader>bd',  to = '<cmd>bd<CR>' },
