@@ -105,6 +105,7 @@ return {
         Operator = '󰆕',
         TabNine = 'A',
         TypeParameter = '',
+        Number = '0'
       },
     })
     cmp.setup({

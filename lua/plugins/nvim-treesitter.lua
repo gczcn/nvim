@@ -27,6 +27,7 @@ return {
           'markdown',
           'markdown_inline',
           'regex',
+          'c_sharp',
         },
         auto_install = true,
         highlight = {

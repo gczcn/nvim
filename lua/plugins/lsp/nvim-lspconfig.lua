@@ -22,6 +22,7 @@ return {
           'emmet_ls',
           'prismals',
           'pyright',
+          'omnisharp',
         },
         -- auto-install configured servers (with lspconfig)
         automatic_installation = true, -- not the same as ensure_installed
@@ -191,6 +192,19 @@ return {
             },
           },
         },
+      })
+
+      -- configure C sharp language server
+      lspconfig['omnisharp'].setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+        cmd = { "dotnet", vim.fn.stdpath "data" .. "/mason/packages/omnisharp/libexec/OmniSharp.dll" },
+        enable_roslyn_analyzers = true,
+        organize_imports_on_format = true,
+        enable_import_completion = true,
+        root_dir = function ()
+          return vim.loop.cwd() -- current working directory
+        end,
       })
     end
   },

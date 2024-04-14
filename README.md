@@ -34,6 +34,7 @@
 * [make](https://www.gnu.org/software/make/)
 * [Lazygit](https://github.com/jesseduffield/lazygit)
 * [z](https://github.com/rupa/z/)
+* [dotnet](https://dotnet.microsoft.com/en-us/download)
 * Optional:
   - [Nerd Font](https://www.nerdfonts.com/)
 
