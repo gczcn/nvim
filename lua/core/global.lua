@@ -1,1 +1,0 @@
-fileopened = { 'BufReadPost', 'BufWritePost', 'BufNewFile' }
