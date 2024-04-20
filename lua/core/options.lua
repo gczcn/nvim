@@ -48,7 +48,7 @@ local options = {
   pumblend = 25,                                   -- Set popup menu transparency
   fillchars = { foldopen = "-", foldclose = ">" },
   laststatus = 0,
-  spell = true,
+  spell = false,
   spelllang = { 'en_us' },
 }
 

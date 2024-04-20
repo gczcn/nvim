@@ -77,10 +77,6 @@ local nmappings = {
   { from = '<M-E>',       to = '<cmd>resize -2<CR>' },
   { from = '<M-N>',       to = '<cmd>vertical resize -2<CR>' },
   { from = '<M-I>',       to = '<cmd>vertical resize +2<CR>' },
-  { from = '<C-u>',       to = '<cmd>resize +2<CR>',                                             mode = it },
-  { from = '<C-e>',       to = '<cmd>resize -2<CR>',                                             mode = it },
-  { from = '<C-n>',       to = '<cmd>vertical resize -2<CR>',                                    mode = it },
-  { from = '<C-i>',       to = '<cmd>vertical resize +2<CR>',                                    mode = it },
 
   -- Pairs
   { from = '<M-<>',       to = '<><left>',                                                       mode = ic },
