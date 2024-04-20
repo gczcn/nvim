@@ -1,3 +1,17 @@
+vim.api.nvim_create_autocmd('ColorScheme', {
+  pattern = '*',
+  callback = function()
+    if vim.g.colors_name == 'gruvbox' then
+      local set_hl = vim.api.nvim_set_hl
+      local get_hl = vim.api.nvim_get_hl
+      local yellow = get_hl(0, {name = 'GruvboxYellow'})
+      set_hl(0, 'NoiceCmdlinePopupBorder', get_hl(0, {name = 'Normal'}))
+      set_hl(0, 'NoiceCmdlinePopupTitle', get_hl(0, {name = 'Normal'}))
+      set_hl(0, 'NoiceCmdlineIcon', yellow)
+      set_hl(0, 'NoiceCmdlineIcon', yellow)
+    end
+  end,
+})
 return {
   {
     'ellisonleao/gruvbox.nvim',
@@ -19,12 +33,6 @@ return {
           FloatTitle = { bg = '#3c3836', bold = true, fg = '#b8bb26' },
           FloatFooter = { bg = '#3c3836', bold = true, fg = '#b8bb26' },
 
-          -- noice
-          NoiceCmdlinePopupBorder = { bg = '#282828' },
-          NoiceCmdlinePopupTitle = { bg = '#282828' },
-          NoiceCmdlineIcon = { bg = '#282828', fg = '#fabd2f' },
-          NoiceCmdlineIconSearch = { bg = '#282828', fg = '#fabd2f' },
-
           -- mini.indentscope
           MiniIndentscopeSymbol = { fg = '#fabd2f' }
         },
@@ -34,10 +42,9 @@ return {
   },
   {
     'EdenEast/nightfox.nvim',
-    enabled = false,
+    lazy = true,
     priority = 1000,
     config = function ()
-      vim.cmd('colorscheme nightfox')
     end
   },
 }

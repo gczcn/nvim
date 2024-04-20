@@ -29,6 +29,7 @@ return {
       options = {
         component_separators = '',
         section_separators = { left = '', right = '' },
+        disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } },
       },
       sections = default_sections,
       inactive_sections = default_sections,

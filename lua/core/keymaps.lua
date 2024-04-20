@@ -19,10 +19,11 @@ local nmappings = {
   { from = '<M-Y>',       to = '"+Y',                                                            mode = nv },
   { from = '<M-p>',       to = '"+p',                                                            mode = nv },
   { from = '<M-P>',       to = '"+P',                                                            mode = nv },
-  { from = 'vr',          to = '`[v`]', },
-  { from = '`',           to = '~<left>', },
+  { from = 'vr',          to = '`[v`]' },
+  { from = '`',           to = '~<left>' },
   { from = '`',           to = '~',                                                              mode = v },
   { from = '<M-q>',       to = '<ESC>',                                                          mode = iv },
+  { from = '<leader>sni', to = '<cmd>noh<CR>' },
 
   -- Movement
   { from = 'u',           to = 'k',                                                              mode = nvo },
@@ -63,20 +64,20 @@ local nmappings = {
   { from = '<leader>we',  to = '<C-w>j' },
   { from = '<leader>wn',  to = '<C-w>h' },
   { from = '<leader>wi',  to = '<C-w>l' },
-  { from = '<leader>su',  to = '<cmd>set nosplitbelow<CR><cmd>split<CR><cmd>set splitbelow<CR>' },
-  { from = '<leader>se',  to = '<cmd>set splitbelow<CR><cmd>split<CR>' },
-  { from = '<leader>sn',  to = '<cmd>set nosplitright<CR><cmd>vsplit<CR><cmd>set splitright<CR>' },
-  { from = '<leader>si',  to = '<cmd>set splitright<CR><cmd>vsplit<CR>' },
-  { from = '<leader>sv',  to = '<C-w>t<C-w>H' },
-  { from = '<leader>sh',  to = '<C-w>t<C-w>K' },
-  { from = '<leader>srv', to = '<C-w>b<C-w>H' },
-  { from = '<leader>srh', to = '<C-w>b<C-w>K' },
+  { from = 'su',          to = '<cmd>set nosplitbelow<CR><cmd>split<CR><cmd>set splitbelow<CR>' },
+  { from = 'se',          to = '<cmd>set splitbelow<CR><cmd>split<CR>' },
+  { from = 'sn',          to = '<cmd>set nosplitright<CR><cmd>vsplit<CR><cmd>set splitright<CR>' },
+  { from = 'si',          to = '<cmd>set splitright<CR><cmd>vsplit<CR>' },
+  { from = 'sv',          to = '<C-w>t<C-w>H' },
+  { from = 'sh',          to = '<C-w>t<C-w>K' },
+  { from = 'srv',         to = '<C-w>b<C-w>H' },
+  { from = 'srh',         to = '<C-w>b<C-w>K' },
 
   -- Resize
-  { from = '<M-U>',       to = '<cmd>resize +2<CR>' },
-  { from = '<M-E>',       to = '<cmd>resize -2<CR>' },
-  { from = '<M-N>',       to = '<cmd>vertical resize -2<CR>' },
-  { from = '<M-I>',       to = '<cmd>vertical resize +2<CR>' },
+  { from = '<M-u>',       to = '<cmd>resize +2<CR>' },
+  { from = '<M-e>',       to = '<cmd>resize -2<CR>' },
+  { from = '<M-n>',       to = '<cmd>vertical resize -2<CR>' },
+  { from = '<M-i>',       to = '<cmd>vertical resize +2<CR>' },
 
   -- Pairs
   { from = '<M-<>',       to = '<><left>',                                                       mode = ic },
@@ -89,9 +90,12 @@ local nmappings = {
   { from = '<M-`>',       to = '``<left>',                                                       mode = c },
   { from = '<M-">',       to = '""<left>',                                                       mode = c },
 
+  -- Buffer
+  { from = '<leader>bd',  to = '<cmd>bd<CR>' },
+
   -- Other
   {
-    from = '<leader>zs',
+    from = '<leader>cts',
     to = function()
       vim.ui.input(
         { prompt = 'Do you want to replace all tab characters with the corresponding number of spaces? [y/N]' },

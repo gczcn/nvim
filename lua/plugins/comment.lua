@@ -1,7 +1,7 @@
 return {
   'numToStr/Comment.nvim',
   event = 'User FileOpened',
-  config = function ()
+  config = function()
     require('Comment').setup({
       ---LHS of toggle mappings in NORMAL mode
       toggler = {

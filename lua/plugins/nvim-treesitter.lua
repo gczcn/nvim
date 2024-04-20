@@ -93,4 +93,8 @@ return {
         end, { silent = true })
     end
   },
+  {
+    'HiPhish/rainbow-delimiters.nvim',
+    event = { 'User FileOpened', 'VeryLazy' },
+  },
 }

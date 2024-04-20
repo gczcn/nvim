@@ -42,7 +42,16 @@ return {
         },
         draw = {
           delay = 0,
-          animation = require("mini.indentscope").gen_animation.none(),
+          animation = require('mini.indentscope').gen_animation.none(),
+        },
+        mappings = {
+          -- Textobjects
+          object_scope = '',
+          object_scope_with_border = '',
+
+          -- Motions (jump to respective border line; if not present - body line)
+          goto_top = '[i',
+          goto_bottom = ']i',
         },
       })
     end,
