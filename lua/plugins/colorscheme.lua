@@ -12,6 +12,7 @@ vim.api.nvim_create_autocmd('ColorScheme', {
     end
   end,
 })
+
 return {
   {
     'ellisonleao/gruvbox.nvim',

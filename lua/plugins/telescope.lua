@@ -13,8 +13,6 @@ return {
     { 'tu', '<cmd>Telescope undo<CR>' },
     { 'te', '<cmd>Telescope file_browser<CR>' },
     { 'tE', '<cmd>Telescope file_browser path=%:p:h<CR>' },
-    { '<leader>e', '<cmd>Telescope file_browser<CR>' },
-    { '<leader>E', '<cmd>Telescope file_browser path=%:p:h<CR>' },
     { 'tj', '<cmd>Telescope emoji<CR>' },
     { 'tG', '<cmd>Telescope glyph<CR>' },
     { 'tb', '<cmd>Telescope bookmarks list<CR>' },
