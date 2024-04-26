@@ -29,7 +29,7 @@ return {
         map('n', '<leader>ghb', function() gs.blame_line({ full = true }) end, 'Blame Line')
         map('n', '<leader>ghd', gs.diffthis, 'Diff This')
         map('n', '<leader>ghD', function() gs.diffthis('~') end, 'Diff This ~')
-        map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>', 'GitSigns Select Hunk')
+        map({ 'o', 'x' }, 'kh', ':<C-U>Gitsigns select_hunk<CR>', 'GitSigns Select Hunk')
         map('n', '<leader>gl', '<cmd>Gitsigns toggle_linehl<CR>', 'Toggle GitSigns Line Highlight')
       end,
     })

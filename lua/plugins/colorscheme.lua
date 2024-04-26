@@ -1,15 +1,41 @@
 vim.api.nvim_create_autocmd('ColorScheme', {
   pattern = '*',
   callback = function()
+    local set_hl = vim.api.nvim_set_hl
+    local get_hl = vim.api.nvim_get_hl
+    local yellow = get_hl(0, {name = 'GruvboxYellow'})
+
+    local illwr = get_hl(0, {name = 'CursorLine'})
+    illwr['underline'] = true
+
+    local diagnostic_line = {
+      dark = {
+        ErrorLine = '#4c3130',
+        WarnLine = '#403821',
+        HintLine = '#364230',
+        InfoLine = '#214039',
+      },
+      light = {
+        ErrorLine = '',
+        WarnLine = '',
+        HintLine = '',
+        InfoLine = '',
+      },
+    }
+
     if vim.g.colors_name == 'gruvbox' then
-      local set_hl = vim.api.nvim_set_hl
-      local get_hl = vim.api.nvim_get_hl
-      local yellow = get_hl(0, {name = 'GruvboxYellow'})
       set_hl(0, 'NoiceCmdlinePopupBorder', get_hl(0, {name = 'Normal'}))
       set_hl(0, 'NoiceCmdlinePopupTitle', get_hl(0, {name = 'Normal'}))
       set_hl(0, 'NoiceCmdlineIcon', yellow)
       set_hl(0, 'NoiceCmdlineIcon', yellow)
+
+      -- Set diagnostic row background color
+      local dl = diagnostic_line[vim.o.background]
+      for _, d in ipairs({ 'ErrorLine', 'WarnLine', 'HintLine', 'InfoLine' }) do
+        set_hl(0, d, {bg = dl[d]})
+      end
     end
+    set_hl(0, 'IlluminatedWordRead', illwr)
   end,
 })
 
@@ -25,14 +51,6 @@ return {
         },
         overrides = {
           Visual = { bold = true },
-          ErrorLine = { bg = '#4c3130' },
-          WarnLine = { bg = '#403821' },
-          HintLine = { bg = '#364230' },
-          InfoLine = { bg = '#214039' },
-
-          -- floatwin
-          FloatTitle = { bg = '#3c3836', bold = true, fg = '#b8bb26' },
-          FloatFooter = { bg = '#3c3836', bold = true, fg = '#b8bb26' },
 
           -- mini.indentscope
           MiniIndentscopeSymbol = { fg = '#fabd2f' }
@@ -45,7 +63,7 @@ return {
     'EdenEast/nightfox.nvim',
     lazy = true,
     priority = 1000,
-    config = function ()
+    config = function()
     end
   },
 }

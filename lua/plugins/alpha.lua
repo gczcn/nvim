@@ -2,6 +2,9 @@ return {
   'goolord/alpha-nvim',
   event = 'UIEnter',
   cmd = 'Alpha',
+  depengencies = {
+    'nvim-tree/nvim-web-devicons',
+  },
   config = function()
     local alpha = require('alpha')
     local startify = require('alpha.themes.startify')
@@ -44,19 +47,19 @@ return {
     -- Set menu
     startify.section.top_buttons.val = {
       startify.button('ne', '  New File', '<cmd>ene<CR>'),
-      startify.button('zc', '  Z jump', '<cmd>Telescope z<CR>'),
-      startify.button('ff', '󰈞  Find file', '<cmd>Telescope find_files<CR>'),
-      startify.button('fw', '󰈬  Find word', '<cmd>Telescope live_grep<CR>'),
-      startify.button('gs', '󰅳  grep string', '<cmd>Telescope grep_string<CR>'),
-      startify.button('rf', '  Recent files', '<cmd>Telescope oldfiles<CR>'),
-      startify.button('bm', '  Bookmarks', '<cmd>Telescope bookmarks list<CR>'),
+      startify.button('tz', '  Z jump', '<cmd>Telescope z<CR>'),
+      startify.button('tf', '󰈞  Find file', '<cmd>Telescope find_files<CR>'),
+      startify.button('ts', '󰈬  Find word', '<cmd>Telescope live_grep<CR>'),
+      startify.button('tc', '󰅳  grep string', '<cmd>Telescope grep_string<CR>'),
+      startify.button('tr', '  Recent files', '<cmd>Telescope oldfiles<CR>'),
+      startify.button('tb', '  Bookmarks', '<cmd>Telescope bookmarks list<CR>'),
       startify.button('rs', '  Restore Session', '<cmd>lua require("persistence").load()<CR>'),
       startify.button('nf', '  Neotree file explorer', '<cmd>Neotree toggle<CR>'),
       startify.button('of', '  Oil file explorer', '<cmd>Oil<CR>'),
-      startify.button('tf', '  Telescope file explorer', '<cmd>Telescope file_browser<CR>'),
-      startify.button('km', '󰌌  Keymaps', '<cmd>Telescope keymaps<CR>'),
+      startify.button('te', '  Telescope file explorer', '<cmd>Telescope file_browser<CR>'),
+      startify.button('tk', '󰌌  Keymaps', '<cmd>Telescope keymaps<CR>'),
       startify.button('cs', '  Colorscheme', '<cmd>Telescope colorscheme<CR>'),
-      startify.button('tr', '  Terminal', '<cmd>ToggleTerm<CR>'),
+      startify.button('tt', '  Terminal', '<cmd>ToggleTerm<CR>'),
       startify.button('ly', '󰒲  Lazy', '<cmd>Lazy<CR>'),
       startify.button('ls', '󰚰  Lazy Sync', '<cmd>Lazy sync<CR>'),
       startify.button('mn', '󰌗  Mason', '<cmd>Mason<CR>'),

@@ -12,9 +12,10 @@ local ic  = { 'i', 'c' }
 local it  = { 'i', 't' }
 
 local nmappings = {
-  { from = 'S',           to = '<cmd>w<CR>' },
+  -- { from = 'S',           to = '<cmd>w<CR>' },
+  -- { from = ';',           to = ':',                                                              mode = nv },
+  { from = '<ESC>',       to = '<ESC>' },
   { from = 'Q',           to = '<cmd>q<CR>' },
-  { from = ';',           to = ':',                                                              mode = nv },
   { from = '<M-y>',       to = '"+y',                                                            mode = nv },
   { from = '<M-Y>',       to = '"+Y',                                                            mode = nv },
   { from = '<M-p>',       to = '"+p',                                                            mode = nv },
@@ -49,8 +50,8 @@ local nmappings = {
   { from = 'B',           to = '5b',                                                             mode = nv },
 
   -- Actions
+  -- { from = 'L',           to = '<C-r>',                                                          mode = nv },
   { from = 'l',           to = 'u',                                                              mode = nv },
-  { from = 'L',           to = '<C-r>',                                                          mode = nv },
   { from = 'k',           to = 'i',                                                              mode = nv },
   { from = 'K',           to = 'I',                                                              mode = nv },
 
@@ -97,19 +98,13 @@ local nmappings = {
   {
     from = '<leader>cts',
     to = function()
-      vim.ui.input(
-        { prompt = 'Do you want to replace all tab characters with the corresponding number of spaces? [y/N]' },
-        function(zsinput)
-          if zsinput == 'y' or zsinput == 'yes' then
-            local space = ''
-            for _ = 0, vim.o.shiftwidth - 1 do
-              space = space .. ' '
-            end
-            local zscmd = '%s/\t/' .. space .. '/g'
-            vim.cmd(zscmd)
-            vim.cmd('noh')
-          end
-        end)
+      local space = ''
+      for _ = 0, vim.o.shiftwidth - 1 do
+        space = space .. ' '
+      end
+      local zscmd = '%s/\t/' .. space .. '/g'
+      vim.cmd(zscmd)
+      vim.cmd('noh')
     end
   },
 }
