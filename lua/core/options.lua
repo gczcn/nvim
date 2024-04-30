@@ -45,7 +45,7 @@ local options = {
   undofile = true,
   winminwidth = 5,                                 -- Minimum window width
   smoothscroll = true,
-  pumblend = 25,                                   -- Set popup menu transparency
+  pumblend = 15,                                   -- Set popup menu transparency
   fillchars = { foldopen = "-", foldclose = ">" },
   laststatus = 0,
   spell = false,
@@ -55,3 +55,6 @@ local options = {
 for key, value in pairs(options) do
   vim.opt[key] = value
 end
+
+-- enabled tabnine
+vim.g.enabled_tabnine = true

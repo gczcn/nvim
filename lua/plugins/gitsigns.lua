@@ -33,6 +33,5 @@ return {
         map('n', '<leader>gl', '<cmd>Gitsigns toggle_linehl<CR>', 'Toggle GitSigns Line Highlight')
       end,
     })
-      vim.api.nvim_set_hl(0, 'GitSignsCurrentLineBlame', { fg = '#665c54' })
   end
 }

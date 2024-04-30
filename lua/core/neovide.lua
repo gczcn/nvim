@@ -17,8 +17,8 @@ vim.g.neovide_cursor_vfx_mode = 'pixiedust'
 vim.g.neovide_remember_window_size = true
 vim.g.neovide_input_macos_alt_is_meta = true
 
-vim.opt.pumblend = 35
-vim.opt.winblend = 35
+vim.opt.pumblend = 30
+vim.opt.winblend = 30
 
 local get_guifontsize = function ()
   return string.split(vim.o.guifont, ':h')[2]

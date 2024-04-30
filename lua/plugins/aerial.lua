@@ -7,7 +7,7 @@ return {
   },
   cmd = 'AerialToggle',
   keys = {
-    { '<leader>ca', '<cmd>AerialToggle<CR>' }
+    { '<leader>cA', '<cmd>AerialToggle<CR>' }
   },
   config = function ()
     require("aerial").setup({

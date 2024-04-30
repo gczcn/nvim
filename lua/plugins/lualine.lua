@@ -25,27 +25,35 @@ return {
         {
           function() return require('noice').api.status.command.get() end,
           cond = function() return package.loaded['noice'] and require('noice').api.status.command.has() end,
-          color = { fg = Utils.get_hl('Statement', 'fg') },
+          color = function()
+            return { fg = Utils.get_hl('Statement', 'fg') }
+          end
         },
 
         -- stylua: ignore
         {
           function() return require('noice').api.status.mode.get() end,
           cond = function() return package.loaded['noice'] and require('noice').api.status.mode.has() end,
-          color = { fg = Utils.get_hl('Constant', 'fg') },
+          color = function()
+            return { fg = Utils.get_hl('Constant', 'fg') }
+          end
         },
 
         -- stylua: ignore
         {
           function() return '  ' .. require('dap').status() end,
           cond = function () return package.loaded['dap'] and require('dap').status() ~= '' end,
-          color = { fg = Utils.get_hl('Debug', 'fg') },
+          color = function()
+            return { fg = Utils.get_hl('Debug', 'fg') }
+          end
         },
 
         {
           require('lazy.status').updates,
           cond = require('lazy.status').has_updates,
-          color = { fg = Utils.get_hl('Special', 'fg') },
+          color = function()
+            return { fg = Utils.get_hl('Special', 'fg') }
+          end
         },
 
         -- stylua: ignore

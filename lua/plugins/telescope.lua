@@ -51,6 +51,11 @@ return {
 
     telescope.setup({
       defaults = {
+        borderchars = {
+          prompt = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
+          results = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
+          preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
+        };
         mappings = {
           i = {
             ['<M-u>'] = actions.move_selection_previous,
@@ -101,7 +106,7 @@ return {
     telescope.load_extension('glyph')
     telescope.load_extension('bookmarks')
     telescope.load_extension('nerdy')
-    telescope.load_extension("aerial")
-    telescope.load_extension("z")
+    telescope.load_extension('aerial')
+    telescope.load_extension('z')
   end,
 }

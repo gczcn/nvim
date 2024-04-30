@@ -22,17 +22,7 @@ end
 
 Utils.menu = function()
   vim.ui.select({
-    ' Neovim',
-    '> File',
-    '> Edit',
-    '> Selection',
-    '> View',
-    '> Go',
-    '> Run',
-    '> Terminal',
-    '> Window',
     '> Game',
-    '  Help',
   }, { prompt = 'Menu' }, function(input)
     if input ~= nil then
       vim.cmd('Menu' .. string.sub(input, 3))
@@ -42,4 +32,3 @@ end
 
 vim.cmd('command! Menu :lua Utils.menu()')
 vim.cmd('command! MenuGame :lua Utils.menu_game()')
-vim.cmd('command! MenuHelp :help')
