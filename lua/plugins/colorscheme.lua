@@ -17,18 +17,18 @@ vim.api.nvim_create_autocmd('ColorScheme', {
     local illwr = get_hl(0, {name = 'CursorLine'})
     illwr['underline'] = true
 
-    local diagnostic_line = {
+    local diagnostic_virtual_text = {
       dark = {
-        ErrorLine = '#4c3130',
-        WarnLine = '#403821',
-        HintLine = '#364230',
-        InfoLine = '#304540',
+        DiagnosticVirtualTextError = '#4c3130',
+        DiagnosticVirtualTextWarn = '#403821',
+        DiagnosticVirtualTextHint = '#364230',
+        DiagnosticVirtualTextInfo = '#304540',
       },
       light = {
-        ErrorLine = '',
-        WarnLine = '',
-        HintLine = '',
-        InfoLine = '',
+        DiagnosticVirtualTextError = '',
+        DiagnosticVirtualTextWarn = '',
+        DiagnosticVirtualTextHint = '',
+        DiagnosticVirtualTextInfo = '',
       },
     }
 
@@ -40,9 +40,9 @@ vim.api.nvim_create_autocmd('ColorScheme', {
       set_hl(0, 'TelescopePromptBorder', gruvbox_orange)
 
       -- Set diagnostic row background color
-      local dl = diagnostic_line[vim.o.background]
-      for _, d in ipairs({ 'ErrorLine', 'WarnLine', 'HintLine', 'InfoLine' }) do
-        set_hl(0, d, {bg = dl[d]})
+      local dvt = diagnostic_virtual_text[vim.o.background]
+      for _, d in ipairs({ 'DiagnosticVirtualTextError', 'DiagnosticVirtualTextWarn', 'DiagnosticVirtualTextHint', 'DiagnosticVirtualTextInfo' }) do
+        set_hl(0, d, {bg = dvt[d], fg=Utils.get_hl(d, 'fg')})
       end
     end
 

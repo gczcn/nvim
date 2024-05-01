@@ -52,6 +52,7 @@ local nmappings = {
   -- Actions
   -- { from = 'L',           to = '<C-r>',                                                          mode = nv },
   { from = 'l',           to = 'u',                                                              mode = nv },
+  { from = 'L',           to = 'U',                                                              mode = nv },
   { from = 'k',           to = 'i',                                                              mode = nv },
   { from = 'K',           to = 'I',                                                              mode = nv },
 
