@@ -19,6 +19,8 @@ return {
     { 'tg', '<cmd>Telescope nerdy<CR>' },
     { 'ta', '<cmd>Telescope aerial<CR>' },
     { 'tz', '<cmd>Telescope z<CR>' },
+    { 'th', '<cmd>Telescope help_tags<CR>' },
+    { 'to', '<cmd>Telescope find_files cwd=' .. vim.fn.stdpath 'config' .. '<CR>' }
   },
   branch = '0.1.x',
   dependencies = {
