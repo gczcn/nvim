@@ -25,10 +25,10 @@ vim.api.nvim_create_autocmd('ColorScheme', {
         DiagnosticVirtualTextInfo = '#304540',
       },
       light = {
-        DiagnosticVirtualTextError = '',
-        DiagnosticVirtualTextWarn = '',
-        DiagnosticVirtualTextHint = '',
-        DiagnosticVirtualTextInfo = '',
+        DiagnosticVirtualTextError = '#4c3130',
+        DiagnosticVirtualTextWarn = '#403821',
+        DiagnosticVirtualTextHint = '#364230',
+        DiagnosticVirtualTextInfo = '#304540',
       },
     }
 
@@ -42,7 +42,7 @@ vim.api.nvim_create_autocmd('ColorScheme', {
       -- Set diagnostic row background color
       local dvt = diagnostic_virtual_text[vim.o.background]
       for _, d in ipairs({ 'DiagnosticVirtualTextError', 'DiagnosticVirtualTextWarn', 'DiagnosticVirtualTextHint', 'DiagnosticVirtualTextInfo' }) do
-        set_hl(0, d, {bg = dvt[d], fg=Utils.get_hl(d, 'fg')})
+        set_hl(0, d, {bg = dvt[d], fg = Utils.get_hl(d, 'fg')})
       end
     end
 
@@ -50,7 +50,7 @@ vim.api.nvim_create_autocmd('ColorScheme', {
     set_hl(0, 'GitSignsCurrentLineBlame', { fg = Utils.get_hl('Comment', 'fg') })
 
     hl_change('italic', true, {'Comment'})
-    hl_change('bold', true, {'Visual', 'Function'})
+    hl_change('bold', true, {'Visual'})
 
   end,
 })
@@ -80,5 +80,13 @@ return {
     config = function()
       vim.cmd('colorscheme nightfox')
     end
+  },
+  {
+    'maxmx03/solarized.nvim',
+    lazy = true,
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme 'solarized'
+    end,
   },
 }

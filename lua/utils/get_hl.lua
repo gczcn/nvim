@@ -1,13 +1,19 @@
 Utils.get_hl = function (n, color)
-  run = true
-  name = n
+  local run = true
+  local name = n
   while run do
-    hl = vim.api.nvim_get_hl(0, {name = name})
+    local hl = vim.api.nvim_get_hl(0, {name = name})
 
     if hl['link'] == nil then
       run = false
       if hl[color] ~= nil then
-        return '#' .. string.format('%X', hl[color])
+        local hi = string.format('%x', hl[color])
+        if string.len(hi) ~= 6 then
+          for _ = 1, 6 - string.len(hi), 1 do
+            hi = '0'.. hi
+          end
+        end
+        return '#' .. hi
       else
         return '#000000'
       end
