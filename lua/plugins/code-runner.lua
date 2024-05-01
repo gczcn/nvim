@@ -23,6 +23,9 @@ return {
     vim.g.code_runner_run_args = ''
     local setup = function ()
       require('code_runner').setup({
+        term = {
+          size = 20
+        },
         filetype = {
           markdown = function ()
             vim.cmd [[MarkdownPreviewToggle]]
