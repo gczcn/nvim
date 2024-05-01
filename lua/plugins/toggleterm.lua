@@ -10,7 +10,7 @@ return {
   },
   version = "*",
   opts = {
-    size = 30,
+    size = 20,
     winbar = {
       enabled = true,
       name_formatter = function(term) --  term: Terminal
