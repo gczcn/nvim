@@ -1,6 +1,6 @@
 # Neovim configuration for [Colemak](https://colemak.com) users
 
-> NOTE: This readme may be out of date and not yet complete
+> NOTE: The contents of this repository are being moved to [gczcn/dot/tree/main/nvim](https://github.com/gczcn/dot/tree/main/nvim)
 
 [chinese README](./README.zh_CN.md)
 

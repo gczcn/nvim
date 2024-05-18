@@ -10,10 +10,10 @@ return {
         },
         overrides = {
           Visual = { bold = true },
-          ErrorLine = { bg = '#4c3130' },
-          WarnLine = { bg = '#403821' },
-          HintLine = { bg = '#364230' },
-          InfoLine = { bg = '#214039' },
+          -- ErrorLine = { bg = '#4c3130' },
+          -- WarnLine = { bg = '#403821' },
+          -- HintLine = { bg = '#364230' },
+          -- InfoLine = { bg = '#214039' },
 
           -- floatwin
           FloatTitle = { bg = '#3c3836', bold = true, fg = '#b8bb26' },
